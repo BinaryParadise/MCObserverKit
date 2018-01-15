@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'MCObserverKit_Example' do
+  pod 'MCObserverKit', :path => '../'
+
+  target 'MCObserverKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
