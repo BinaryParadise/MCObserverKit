@@ -11,14 +11,13 @@
 #import <MCFoundation/MCFoundation.h>
 #import "MOKBinding.h"
 
-//MOK:manager observe kit
-#define MOK(TARGET, ...) \
-meta_macro_if_eq(1, meta_macro_argcount(__VA_ARGS__)) \
+#define MCBinding(TARGET, ...) \
+macro_if_eq(1, macro_argcount(__VA_ARGS__)) \
 (_OKit_(TARGET, __VA_ARGS__, nil)) \
 (_OKit_(TARGET, __VA_ARGS__))
 
 #define _OKit_(TARGET, KEYPATH, NILVALUE) \
 [[MOKBinding alloc] initWithTarget:(TARGET) nilValue:(NILVALUE)][@keypath(TARGET, KEYPATH)]
 
-#define MOKObserve(TARGET, KEYPATH) \
+#define MCObserver(TARGET, KEYPATH) \
 [[MOKObject alloc] initWithTarget:TARGET keyPath:@keypath(TARGET, KEYPATH)]

@@ -20,10 +20,6 @@ it, simply add the following line to your Podfile:
 pod 'MCObserverKit'
 ```
 
-## Author
-
-mylcode, mylcode.ali@gmail.com
-
 ## License
 
 MCObserverKit is available under the MIT license. See the LICENSE file for more info.

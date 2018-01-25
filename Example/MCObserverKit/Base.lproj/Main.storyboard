@@ -20,8 +20,42 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="400-vU-7Da">
+                                <rect key="frame" x="0.0" y="106" width="375" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="abG-T2-0yf"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CHl-Rv-DK0">
+                                <rect key="frame" x="0.0" y="162" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="K5C-M4-0te"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="400-vU-7Da" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="272-sn-geB"/>
+                            <constraint firstAttribute="trailing" secondItem="400-vU-7Da" secondAttribute="trailing" id="6tQ-s6-PqA"/>
+                            <constraint firstItem="400-vU-7Da" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="86" id="GFa-c1-6gu"/>
+                            <constraint firstAttribute="trailing" secondItem="CHl-Rv-DK0" secondAttribute="trailing" id="Zf5-Ue-qu9"/>
+                            <constraint firstItem="CHl-Rv-DK0" firstAttribute="top" secondItem="400-vU-7Da" secondAttribute="bottom" constant="26" id="lUs-BJ-uzU"/>
+                            <constraint firstItem="CHl-Rv-DK0" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" id="uhD-ar-5ns"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textField1" destination="400-vU-7Da" id="7me-fO-sso"/>
+                        <outlet property="textField2" destination="CHl-Rv-DK0" id="ZdP-7v-BCh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

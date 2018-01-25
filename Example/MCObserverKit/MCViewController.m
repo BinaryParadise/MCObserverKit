@@ -7,8 +7,11 @@
 //
 
 #import "MCViewController.h"
+#import <MCObserverKit/MCObserverKit.h>
 
 @interface MCViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *textField1;
+@property (weak, nonatomic) IBOutlet UITextField *textField2;
 
 @end
 
@@ -18,12 +21,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self.textField1 addTarget:self action:@selector(textDidChanged:) forControlEvents:UIControlEventEditingChanged];
+    
+    MCBinding(self.textField1, text) = MCObserver(self.textField2, text);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)textDidChanged:(UITextField *)sender {
+    //_textField2.text = sender.text;
 }
 
 @end

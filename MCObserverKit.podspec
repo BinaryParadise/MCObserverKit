@@ -15,21 +15,20 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/mylcode/MCObserverKit'
+  s.homepage         = 'https://github.com/MC-Studio/MCObserverKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'mylcode' => 'mylcode.ali@gmail.com' }
-  s.source           = { :git => 'https://github.com/mylcode/MCObserverKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/MC-Studio/MCObserverKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.9'
+  s.requires_arc    = true
+
+  s.pod_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES', 'GCC_PREPROCESSOR_DEFINITIONS' => 'MCLoggerLevel = 5'}
 
   s.source_files = 'MCObserverKit/**/*'
-  
-  # s.resource_bundles = {
-  #   'MCObserverKit' => ['MCObserverKit/Assets/*.png']
-  # }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'MCFoundation', '~> 0.1.0'
+  s.dependency 'MCLogger', '~> 0.2.4'
+  s.dependency 'MCFoundation', '~> 0.1.2'
 
 end

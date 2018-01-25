@@ -8,6 +8,7 @@
 
 #import "MOKObject.h"
 #import <objc/runtime.h>
+#import "MCLogger.h"
 
 static void *robindingKeys = &robindingKeys;
 
@@ -83,7 +84,7 @@ static void *robindingKeys = &robindingKeys;
     }
     NSString *uniqueKey = [NSString stringWithFormat:@"<keyPath=%@,observe=%p>",self.keyPath,self];
     if (![bindingDict.allKeys containsObject:uniqueKey]) {
-        DLogWarn(@"添加<%@: %p, keyPath=%@, observe=%@>的观察者",NSStringFromClass([self.target class]),self.target,uniqueKey,self);
+        MCLogInfo(@"添加<%@: %p, keyPath=%@, observe=%@>的观察者",NSStringFromClass([self.target class]),self.target,uniqueKey,self);
         [self.target addObserver:self forKeyPath:self.keyPath options: NSKeyValueObservingOptionNew context:observerContext];
         [bindingDict setObject:self forKey:uniqueKey];
         self.isObserved = YES;
@@ -110,7 +111,7 @@ static void *robindingKeys = &robindingKeys;
             objc_setAssociatedObject(object.target, robindingKeys, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }else {
             NSString *uniqueKey = [NSString stringWithFormat:@"<keyPath=%@,observe=%p>",object.keyPath,object];
-            DLogWarn(@"%@交由<%p>管理",uniqueKey,self.target);
+            MCLogInfo(@"%@交由<%p>管理",uniqueKey,self.target);
             [bindingDict removeObjectForKey:uniqueKey];
         }
     }
@@ -139,11 +140,11 @@ static void *robindingKeys = &robindingKeys;
         self.observeToObject = nil;
         if (self.isObserved) {
             [self.target removeObserver:self forKeyPath:self.keyPath];
-            DLogWarn(@"移除<%@: %p,keyPath=%@, observe=%@>的观察者",NSStringFromClass([self.target class]),self.target,self.keyPath,self);
+            MCLogInfo(@"移除<%@: %p,keyPath=%@, observe=%@>的观察者",NSStringFromClass([self.target class]),self.target,self.keyPath,self);
         }
     }
     @catch (NSException *exception) {
-        DLogError(@"移除失败：%@",exception.reason);
+        MCLogError(@"移除失败：%@",exception.reason);
     }
     @finally {
         self.keyPath = nil;

@@ -1,4 +1,6 @@
-use_frameworks!
+platform :ios, '8.0'
+
+#use_frameworks!
 
 target 'MCObserverKit_Example' do
   pod 'MCObserverKit', :path => '../'

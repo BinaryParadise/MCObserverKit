@@ -76,7 +76,7 @@ typedef enum : NSUInteger {
 
  @param target 目标
  @param action 函数
- @return
+ @return instance
  */
 - (instancetype)addTarget:(id)target action:(SEL)action;
 
