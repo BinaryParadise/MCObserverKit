@@ -12,9 +12,7 @@
 #import "MOKBinding.h"
 
 #define MCBinding(TARGET, ...) \
-macro_if_eq(1, macro_argcount(__VA_ARGS__)) \
-(_OKit_(TARGET, __VA_ARGS__, nil)) \
-(_OKit_(TARGET, __VA_ARGS__))
+macro_if_eq(1, macro_argcount(__VA_ARGS__))(_OKit_(TARGET, __VA_ARGS__, nil))(_OKit_(TARGET, __VA_ARGS__))
 
 #define _OKit_(TARGET, KEYPATH, NILVALUE) \
 [[MOKBinding alloc] initWithTarget:(TARGET) nilValue:(NILVALUE)][@keypath(TARGET, KEYPATH)]

@@ -24,11 +24,10 @@ TODO: Add long description of the pod here.
   s.osx.deployment_target = '10.9'
   s.requires_arc    = true
 
-  s.pod_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES', 'GCC_PREPROCESSOR_DEFINITIONS' => 'MCLoggerLevel = 5'}
+  s.pod_target_xcconfig = { 'CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES' => 'YES', 'GCC_PREPROCESSOR_DEFINITIONS' => 'MCLoggerLevel=5'}
 
   s.source_files = 'MCObserverKit/**/*'
 
   s.dependency 'MCLogger', '~> 0.2.4'
-  s.dependency 'MCFoundation', '~> 0.1.2'
 
 end

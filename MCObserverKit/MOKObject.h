@@ -45,12 +45,12 @@ typedef enum : NSUInteger {
 /**
  注册观察者
  */
-- (void)registerObserve;
+- (void)registerObserver;
 
 /**
  移除观察者,单例对象必须调用
  */
-+ (void)removeObserve:(id)object;
++ (void)removeObserver:(id)object;
 
 /**
  设置值改变要做相应改变的对象

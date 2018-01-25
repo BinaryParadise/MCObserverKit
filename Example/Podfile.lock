@@ -5,16 +5,19 @@ PODS:
   - CocoaLumberjack/Default (3.3.0)
   - CocoaLumberjack/Extensions (3.3.0):
     - CocoaLumberjack/Default
+  - FBRetainCycleDetector (0.1.4)
   - MCFoundation (0.1.2)
   - MCLogger (0.2.4):
     - CocoaLumberjack (~> 3.3.0)
     - MCFoundation (~> 0.1.1)
   - MCObserverKit (0.1.0):
-    - MCFoundation (~> 0.1.2)
     - MCLogger (~> 0.2.4)
+  - MLeaksFinder (1.0.0):
+    - FBRetainCycleDetector
 
 DEPENDENCIES:
   - MCObserverKit (from `../`)
+  - MLeaksFinder (~> 1.0.0)
 
 EXTERNAL SOURCES:
   MCObserverKit:
@@ -22,10 +25,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 3c8c74683302f9012bb168e1c4b7ae3c0b558431
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   MCFoundation: 03fa144b474d145e6b207fb489128d95c72d3260
   MCLogger: 011c7021d084f094373c5ede79881da7b46aabfd
-  MCObserverKit: 07d988b35782687ead2208d2a869cbf187016679
+  MCObserverKit: f12bd8f82446a30a8f5ac7c4ca98f6e179a2f6de
+  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
 
-PODFILE CHECKSUM: 91f33c3520738a617b159404973854ff8c638fbc
+PODFILE CHECKSUM: 67500a3870af76e27df7a2550a1b159c9685a13a
 
 COCOAPODS: 1.3.1

@@ -82,16 +82,16 @@ static void *robindingKeys = &robindingKeys;
         bindingDict = [NSMutableDictionary dictionary];
         objc_setAssociatedObject(self.target, robindingKeys, bindingDict, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    NSString *uniqueKey = [NSString stringWithFormat:@"<keyPath=%@,observe=%p>",self.keyPath,self];
+    NSString *uniqueKey = [NSString stringWithFormat:@"<keyPath=%@,observer=%@>", self.keyPath, self];
     if (![bindingDict.allKeys containsObject:uniqueKey]) {
-        MCLogInfo(@"添加<%@: %p, keyPath=%@, observe=%@>的观察者",NSStringFromClass([self.target class]),self.target,uniqueKey,self);
+        MCLogInfo(@"添加观察者：[target=<%@: %p>, keyPath=%@, observer=%@]", [self.target class], self.target, self.keyPath, self);
         [self.target addObserver:self forKeyPath:self.keyPath options: NSKeyValueObservingOptionNew context:observerContext];
         [bindingDict setObject:self forKey:uniqueKey];
         self.isObserved = YES;
     }
 }
 
-+ (void)removeObserve:(id)object {
++ (void)removeObserver:(id)object {
     objc_setAssociatedObject(object, robindingKeys, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
@@ -140,7 +140,7 @@ static void *robindingKeys = &robindingKeys;
         self.observeToObject = nil;
         if (self.isObserved) {
             [self.target removeObserver:self forKeyPath:self.keyPath];
-            MCLogInfo(@"移除<%@: %p,keyPath=%@, observe=%@>的观察者",NSStringFromClass([self.target class]),self.target,self.keyPath,self);
+            MCLogInfo(@"注销观察者：[target=<%@: %p>, keyPath=%@, observer=%@]", [self.target class], self.target, self.keyPath, self);
         }
     }
     @catch (NSException *exception) {
