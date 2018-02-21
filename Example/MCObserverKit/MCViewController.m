@@ -9,10 +9,11 @@
 #import "MCViewController.h"
 #import <MCObserverKit/MCObserverKit.h>
 #import "MCObserverViewModel.h"
+#import <MCUIKit/UIView+MCFrameGeometry.h>
 
-@interface MCViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *textField1;
-@property (weak, nonatomic) IBOutlet UITextField *textField2;
+@interface MCViewController () <UITextFieldDelegate>
+@property (strong, nonatomic) UITextField *textField1;
+@property (strong, nonatomic) UITextField *textField2;
 @property (nonatomic, strong) MCObserverViewModel *viewModel;
 
 @end
@@ -21,8 +22,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    MCLogDebug(@"%@", self);
-    _viewModel = [MCObserverViewModel new];
 }
 
 - (void)viewDidLoad
@@ -30,17 +29,34 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    //[self.textField1 addTarget:self action:@selector(textDidChanged:) forControlEvents:UIControlEventEditingChanged];
+    MCLogDebug(@"%@", self);
+    _viewModel = [MCObserverViewModel new];
     
-    //UITextFiled貌似内存没有被释放
-    //MCBinding(self.textField1, text) = MCObserver(self.viewModel, inputText);
-    [MCObserver(self.viewModel, inputText) valueChanged:^(id target, id value) {
-        MCLogDebug(@"%@", value);
-    }];
+    self.textField1 = [[UITextField alloc] initWithFrame:CGRectMake(0, 168, self.view.width, 50)];
+    self.textField1.delegate = self;
+    self.textField1.borderStyle = UITextBorderStyleRoundedRect;
+    self.textField1.tintColor = [UIColor lightGrayColor];
+    [self.view addSubview:self.textField1];
+    
+    self.textField2 = [[UITextField alloc] initWithFrame:CGRectMake(0, self.textField1.bottom + 30, self.view.width, 50)];
+    self.textField2.delegate = self;
+    self.textField2.borderStyle = UITextBorderStyleRoundedRect;
+    self.textField2.tintColor = [UIColor lightGrayColor];
+    [self.view addSubview:self.textField2];
+
+    weakify(self);
+    [self.textField1 addTarget:self action:@selector(textDidChanged:) forControlEvents:UIControlEventEditingChanged];
+    
+    MCBinding(self.textField1, text) = MCObserver(self.viewModel, inputText);
+//    [MCObserver(self.textField1, text) valueChanged:^(id target, id value) {
+//        MCLogDebug(@"%@", value);
+//        strongify(self);
+//        self.textField2.text = value;
+//    }];
 }
 
-- (IBAction)textDidChanged:(UITextField *)sender {
-    //_textField2.text = sender.text;
+- (void)textDidChanged:(UITextField *)sender {
+    _textField2.text = sender.text;
 }
 
 - (IBAction)showInputText:(id)sender {

@@ -53,7 +53,7 @@ static void *robindingKeys = &robindingKeys;
 
 - (instancetype)valueChanged:(void (^)(id, id))block {
     self.block = block;
-    [self registerObserve];
+    [self registerObserver];
     return self;
 }
 
@@ -66,7 +66,7 @@ static void *robindingKeys = &robindingKeys;
     if (target) {
         self.changedTarget = target;
         self.changedAction = action;
-        [self registerObserve];
+        [self registerObserver];
     }
     return self;
 }
@@ -76,7 +76,7 @@ static void *robindingKeys = &robindingKeys;
     return self;
 }
 
-- (void)registerObserve {
+- (void)registerObserver {
     NSMutableDictionary *bindingDict = objc_getAssociatedObject(self.target, robindingKeys);
     if (!bindingDict)         {
         bindingDict = [NSMutableDictionary dictionary];
