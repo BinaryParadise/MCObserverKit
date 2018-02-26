@@ -10,9 +10,6 @@ static void *observerContext = &observerContext;
 
 #import <Foundation/Foundation.h>
 
-#define weakify(obj) __weak typeof(obj) obj##_weak = obj;
-#define strongify(obj) __strong typeof(obj) obj = obj##_weak;
-
 typedef enum : NSUInteger {
     MOKBindingModeNone, //默认
     MOKBindingModeSingle, //单向

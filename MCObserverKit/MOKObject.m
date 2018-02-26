@@ -97,7 +97,7 @@ static void *robindingKeys = &robindingKeys;
 
 - (void)setKeyPath:(NSString *)keyPath onObject:(MOKObject *)object nilValue:(id)nilValue {
     self.observeToObject = object;
-    weakify(object)
+    __weak typeof(object) object_weak = object;
     [self valueChanged:^(id target, id value) {
         id oldValue = [object_weak.target valueForKey:object_weak.keyPath];
         if (![oldValue isEqual:value]) {

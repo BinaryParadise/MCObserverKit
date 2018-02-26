@@ -44,7 +44,6 @@
     self.textField2.tintColor = [UIColor lightGrayColor];
     [self.view addSubview:self.textField2];
 
-    weakify(self);
     [self.textField1 addTarget:self action:@selector(textDidChanged:) forControlEvents:UIControlEventEditingChanged];
     
     MCBinding(self.textField1, text) = MCObserver(self.viewModel, inputText);
