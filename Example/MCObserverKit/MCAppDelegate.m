@@ -7,12 +7,14 @@
 //
 
 #import "MCAppDelegate.h"
+#import <MCLogger/MCLogger.h>
 
 @implementation MCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [MCLogger setLoggerLevel:MCLogFlagVerbose];
     return YES;
 }
 

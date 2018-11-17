@@ -1,0 +1,8 @@
+#coverage_service: coveralls
+workspace: Example/MCObserverKit.xcworkspace
+xcodeproj: Example/MCObserverKit.xcodeproj
+scheme: MCObserverKit-Example
+source_directory: MCObserverKit
+output_directory: ./report
+ignore:
+  - Example/*

@@ -12,7 +12,7 @@ static void *observerContext = &observerContext;
 
 typedef enum : NSUInteger {
     MOKBindingModeNone, //默认
-    MOKBindingModeSingle, //单向
+    MOKBindingModeSingle = MOKBindingModeNone, //单向
     MOKBindingModeReversible //双向
 } MOKBindingMode;
 
@@ -36,9 +36,14 @@ typedef enum : NSUInteger {
 @property (nonatomic, assign) BOOL isObserved;
 
 /**
+ 观察模式
+ */
+@property (nonatomic, assign) MOKBindingMode mode;
+
+/**
  初始化一个观察者对象
  */
-- (instancetype)initWithTarget:(id)target keyPath:(NSString *)keypath;
+- (instancetype)initWithTarget:(id)target keyPath:(NSString *)keypath mode:(MOKBindingMode)mode;
 /**
  注册观察者
  */
@@ -52,15 +57,12 @@ typedef enum : NSUInteger {
 /**
  设置值改变要做相应改变的对象
  */
-- (void)setKeyPath:(NSString *)keyPath onObject:(MOKObject *)object nilValue:(id)nilValue;
+- (void)setKeyPath:(NSString *)keyPath onObject:(MOKObject *)object;
 
 /**
  订阅属性值改变时要执行的block
  */
 - (instancetype)valueChanged:(void (^)(id target,id value))block;
-
-/// 改变完成时调用的block
-- (instancetype)completion:(void (^)(id target,id value))completion;
 
 /**
  订阅属性值改变时要执行的block和需要满足条件的block
@@ -72,8 +74,8 @@ typedef enum : NSUInteger {
  添加目标属性值改变时的回调函数
 
  @param target 目标
- @param action 函数
- @return instance
+ @param action 函数，示例
+ - (void)valueChange:(id)value;
  */
 - (instancetype)addTarget:(id)target action:(SEL)action;
 

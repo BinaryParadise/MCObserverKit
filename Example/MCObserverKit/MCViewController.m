@@ -45,7 +45,6 @@
     [self.view addSubview:self.textField2];
 
     [self.textField1 addTarget:self action:@selector(textDidChanged:) forControlEvents:UIControlEventEditingChanged];
-    
     MCBinding(self.textField1, text) = MCObserver(self.viewModel, inputText);
 //    [MCObserver(self.textField1, text) valueChanged:^(id target, id value) {
 //        MCLogDebug(@"%@", value);

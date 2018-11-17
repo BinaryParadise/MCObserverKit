@@ -14,7 +14,7 @@
  */
 @interface MOKBinding : NSObject
 
-- (id)initWithTarget:(id)target nilValue:(id)nilValue;
+- (id)initWithTarget:(id)target;
 
 /// 绑定订阅属性改变事件 keyPath 值改变时改变对应的属性
 - (void)setObject:(MOKObject *)observer forKeyedSubscript:(NSString *)keyPath;

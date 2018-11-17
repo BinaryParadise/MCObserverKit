@@ -11,33 +11,27 @@
 @interface MOKBinding ()
 
 /**
- 要绑定到的对象
+ 要绑定目标对象
  */
 @property (nonatomic, assign) id target;
-
-// A value to use when `nil` is sent on the bound signal.
-/**
- 当改变的值为nil时使用的值
- */
-@property (nonatomic, assign) id nilValue;
 
 @end
 
 @implementation MOKBinding
 
-- (instancetype)initWithTarget:(id)target nilValue:(id)nilValue {
-    if (target == nil) {
-        return nil;
+- (instancetype)initWithTarget:(id)target {
+    if(self = [super init]) {
+        _target = target;
     }
-    self = [super init];
-    _target = target;
-    _nilValue = nilValue;
     return self;
 }
 
 - (void)setObject:(MOKObject *)observer forKeyedSubscript:(NSString *)keyPath {
-    MOKObject *leftObject = [[MOKObject alloc] initWithTarget:self.target keyPath:keyPath];
-    [leftObject setKeyPath:keyPath onObject:observer nilValue:self.nilValue];
+    MOKObject *leftObject = [[MOKObject alloc] initWithTarget:self.target keyPath:keyPath mode:MOKBindingModeNone];
+    [leftObject setKeyPath:keyPath onObject:observer];
+    if (observer.mode == MOKBindingModeReversible) {
+        [observer setKeyPath:keyPath onObject:leftObject];
+    }
 }
 
 @end
