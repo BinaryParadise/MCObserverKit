@@ -1,8 +1,8 @@
 //
 //  MCObserverKit.h
 //
-//  Created by mylcode on 17/2/9.
-//  Copyright © 2017年 MC-Studio. All rights reserved.
+//  Created by Rake Yang on 17/2/9.
+//  Copyright © 2017年 BinaryParadise. All rights reserved.
 //
 
 /**
@@ -22,3 +22,13 @@ macro_if_eq(1, macro_argcount(__VA_ARGS__))(_OKit_(TARGET, __VA_ARGS__))(_OKit_(
 
 #define MCObserverCC(TARGET, KEYPATH) \
 [[MOKObject alloc] initWithTarget:TARGET keyPath:@keypath(TARGET, KEYPATH) mode:MOKBindingModeReversible]
+
+
+@interface MCObserverKit : NSObject
+
+/**
+ 调试模式
+ */
+@property (class, nonatomic, assign) BOOL debugMode;
+
+@end

@@ -29,7 +29,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    MCLogDebug(@"%@", self);
     _viewModel = [MCObserverViewModel new];
     
     self.textField1 = [[UITextField alloc] initWithFrame:CGRectMake(0, 168, self.view.width, 50)];
@@ -64,7 +63,9 @@
 }
 
 - (void)dealloc {
-    MCLogWarn(@"");
+    self.textField1 = nil;
+    self.textField2 = nil;
+    NSLog(@"%s", __FUNCTION__);
 }
 
 @end

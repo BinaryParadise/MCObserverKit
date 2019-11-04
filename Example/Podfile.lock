@@ -1,17 +1,8 @@
 PODS:
-  - CocoaLumberjack (3.3.0):
-    - CocoaLumberjack/Default (= 3.3.0)
-    - CocoaLumberjack/Extensions (= 3.3.0)
-  - CocoaLumberjack/Default (3.3.0)
-  - CocoaLumberjack/Extensions (3.3.0):
-    - CocoaLumberjack/Default
   - FBRetainCycleDetector (0.1.4)
-  - MCFoundation (0.1.2)
-  - MCLogger (0.2.4):
-    - CocoaLumberjack (~> 3.3.0)
-    - MCFoundation (~> 0.1.1)
-  - MCObserverKit (0.1.0):
-    - MCLogger (~> 0.2.4)
+  - MCFoundation (0.2.2)
+  - MCObserverKit (0.2.0):
+    - MCFoundation (~> 0.2)
   - MCUIKit (0.2.3):
     - MCUIKit/UIKit (= 0.2.3)
   - MCUIKit/Category (0.2.3)
@@ -32,14 +23,12 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 3c8c74683302f9012bb168e1c4b7ae3c0b558431
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
-  MCFoundation: 03fa144b474d145e6b207fb489128d95c72d3260
-  MCLogger: 011c7021d084f094373c5ede79881da7b46aabfd
-  MCObserverKit: 7e3a2b3384b909725351aec1146a5c7387b7f1d3
+  MCFoundation: 1c05141cbc900ec15618d7d4c75fb88719d7b658
+  MCObserverKit: 0888865520a8f3afa781aecb9010ea8d9cf78428
   MCUIKit: 1386da2dce567a5f50f299878652821a099e386a
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
 
-PODFILE CHECKSUM: 17b18e81cbc77e18ed0907f0e767466d35476ed8
+PODFILE CHECKSUM: dfd6c2be3d93343cd7b78ab775d259985ce6db01
 
 COCOAPODS: 1.4.0

@@ -8,7 +8,9 @@
 
 #import "MOKObject.h"
 #import <objc/runtime.h>
-#import "MCLogger.h"
+#import "MCObserverKit.h"
+
+#define LOG_LEVEL_DEF ddLogLevel
 
 static void *robindingKeys = &robindingKeys;
 
@@ -74,7 +76,9 @@ static void *robindingKeys = &robindingKeys;
     }
     NSString *uniqueKey = [NSString stringWithFormat:@"[%p.%@ > %p.%@]", self, self.keyPath, self, [self class]];
     if (![bindingDict.allKeys containsObject:uniqueKey]) {
-        MCLogInfo(@"add [%@.%p.%@ > %p]", [self.target class], self.target, self.keyPath, self);
+        if ([MCObserverKit debugMode]) {
+            NSLog(@"add [%@.%p.%@ > %p]", [self.target class], self.target, self.keyPath, self);
+        }
         [self.target addObserver:self forKeyPath:self.keyPath options: NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:observerContext];
         [bindingDict setObject:self forKey:uniqueKey];
         self.isObserved = YES;
@@ -121,11 +125,15 @@ static void *robindingKeys = &robindingKeys;
         self.observeToObject = nil;
         if (self.isObserved) {
             [self.target removeObserver:self forKeyPath:self.keyPath];
-            MCLogInfo(@"remove [%@.%p.%@ > %p]", [self.target class], self.target, self.keyPath, self);
+            if ([MCObserverKit debugMode]) {
+                NSLog(@"remove [%@.%p.%@ > %p]", [self.target class], self.target, self.keyPath, self);
+            }
         }
     }
     @catch (NSException *exception) {
-        MCLogError(@"移除失败：%@",exception.reason);
+        if ([MCObserverKit debugMode]) {
+            NSLog(@"移除失败：%@",exception.reason);
+        }
     }
     @finally {
         self.keyPath = nil;

@@ -1,6 +1,7 @@
+`rm Podfile.lock`
 platform :ios, '8.0'
 
-#use_frameworks!
+use_frameworks!
 
 target 'MCObserverKit_Example' do
   pod 'MCObserverKit', :path => '../'
@@ -10,6 +11,6 @@ target 'MCObserverKit_Example' do
   target 'MCObserverKit_Tests' do
     inherit! :search_paths
 
-    
+
   end
 end

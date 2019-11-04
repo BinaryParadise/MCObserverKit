@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		24074CD5219F086700CC2FA9 /* MCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24074CD4219F086700CC2FA9 /* MCTestModel.m */; };
+		4BB5549538E8D49C096A1CB4 /* Pods_MCObserverKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8D16F70E8E7320487AF00B /* Pods_MCObserverKit_Example.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -23,8 +24,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		9F8ABD92C28F0C25B8B018F0 /* libPods-MCObserverKit_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E468AE5BE81F54C5DAAAF38 /* libPods-MCObserverKit_Tests.a */; };
-		A957A7F1CF447C44863F4728 /* libPods-MCObserverKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7B8916301E76B60C1BEF44 /* libPods-MCObserverKit_Example.a */; };
+		C1005C354BB6C0A208894F4D /* Pods_MCObserverKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82494EAC944E77675272970A /* Pods_MCObserverKit_Tests.framework */; };
 		C54B5A47201A108000EBD32D /* MCObserverViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B5A46201A108000EBD32D /* MCObserverViewModel.m */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +42,10 @@
 		04A0E1D044E4A149DC68758B /* Pods-MCObserverKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MCObserverKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		04D8B0958A2C6F2DC487072B /* Pods-MCObserverKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MCObserverKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		1073CECE2B41E60F4D182519 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1C8D16F70E8E7320487AF00B /* Pods_MCObserverKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MCObserverKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24074CD3219F086700CC2FA9 /* MCTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCTestModel.h; sourceTree = "<group>"; };
 		24074CD4219F086700CC2FA9 /* MCTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCTestModel.m; sourceTree = "<group>"; };
 		34CF9142864FD6194C239489 /* Pods-MCObserverKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MCObserverKit_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MCObserverKit_Tests/Pods-MCObserverKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3E468AE5BE81F54C5DAAAF38 /* libPods-MCObserverKit_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MCObserverKit_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E772E115DFAEC17F65C9E90 /* Pods-MCObserverKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MCObserverKit_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MCObserverKit_Tests/Pods-MCObserverKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MCObserverKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCObserverKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,11 +68,11 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77B0EE68F3E1A79AC2D365AD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		82494EAC944E77675272970A /* Pods_MCObserverKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MCObserverKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1D79F20FB327121900A49DF /* MCObserverKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MCObserverKit.podspec; path = ../MCObserverKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C54B5A45201A108000EBD32D /* MCObserverViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCObserverViewModel.h; sourceTree = "<group>"; };
 		C54B5A46201A108000EBD32D /* MCObserverViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCObserverViewModel.m; sourceTree = "<group>"; };
-		CB7B8916301E76B60C1BEF44 /* libPods-MCObserverKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MCObserverKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				A957A7F1CF447C44863F4728 /* libPods-MCObserverKit_Example.a in Frameworks */,
+				4BB5549538E8D49C096A1CB4 /* Pods_MCObserverKit_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				9F8ABD92C28F0C25B8B018F0 /* libPods-MCObserverKit_Tests.a in Frameworks */,
+				C1005C354BB6C0A208894F4D /* Pods_MCObserverKit_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,8 +129,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				CB7B8916301E76B60C1BEF44 /* libPods-MCObserverKit_Example.a */,
-				3E468AE5BE81F54C5DAAAF38 /* libPods-MCObserverKit_Tests.a */,
+				1C8D16F70E8E7320487AF00B /* Pods_MCObserverKit_Example.framework */,
+				82494EAC944E77675272970A /* Pods_MCObserverKit_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -371,15 +371,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/MCLogger/MCLogger.framework",
+				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
+				"${BUILT_PRODUCTS_DIR}/MCFoundation/MCFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/MCObserverKit/MCObserverKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MCUIKit/MCUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MCLogger.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MCFoundation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MCObserverKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MCUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
