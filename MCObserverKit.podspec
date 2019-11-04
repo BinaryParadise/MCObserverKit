@@ -18,7 +18,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/MC-Studio/MCObserverKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'mylcode' => 'mylcode.ali@gmail.com' }
-  s.source           = { :git => 'git@github.com:BinaryParadise/MCObserverKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/BinaryParadise/MCObserverKit.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.9'
