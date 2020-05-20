@@ -1,12 +1,12 @@
 `rm Podfile.lock`
 platform :ios, '8.0'
 
-use_frameworks!
+#use_frameworks!
 
 target 'MCObserverKit_Example' do
   pod 'MCObserverKit', :path => '../'
   pod 'MLeaksFinder', '~> 1.0.0'
-  pod 'MCUIKit', '~> 0.2.3'
+  pod 'MCUIKit', '~> 0.3.0'
 
   target 'MCObserverKit_Tests' do
     inherit! :search_paths

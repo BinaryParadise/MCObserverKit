@@ -31,13 +31,13 @@
     
     _viewModel = [MCObserverViewModel new];
     
-    self.textField1 = [[UITextField alloc] initWithFrame:CGRectMake(0, 168, self.view.width, 50)];
+    self.textField1 = [[UITextField alloc] initWithFrame:CGRectMake(8, 168, self.view.mcWidth-16, 50)];
     self.textField1.delegate = self;
     self.textField1.borderStyle = UITextBorderStyleRoundedRect;
     self.textField1.tintColor = [UIColor lightGrayColor];
     [self.view addSubview:self.textField1];
     
-    self.textField2 = [[UITextField alloc] initWithFrame:CGRectMake(0, self.textField1.bottom + 30, self.view.width, 50)];
+    self.textField2 = [[UITextField alloc] initWithFrame:CGRectMake(8, self.textField1.mcBottom + 30, self.view.mcWidth-16, 50)];
     self.textField2.delegate = self;
     self.textField2.borderStyle = UITextBorderStyleRoundedRect;
     self.textField2.tintColor = [UIColor lightGrayColor];

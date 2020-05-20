@@ -20,6 +20,7 @@
 - (void)setUp
 {
     [super setUp];
+    [MCObserverKit setDebugMode:YES];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -45,10 +46,18 @@
     }];
     [MCObserver(m1, uuid) addTarget:m1 action:@selector(targetCallback:)];
     m1.uuid = 15568;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         XCTAssert([m1.text isEqualToString:@"target test"]);
         [testExpectation fulfill];
     });
+    
+    MCTestModel *shared = MCTestModel.shared;
+    [MCObserver(shared, uuid) valueChanged:^(id target, id value) {
+        XCTAssert([value isEqual:@10000]);
+    }];
+    shared.uuid = 10000;
+    
     [self waitForExpectationsWithTimeout:2 handler:nil];
 }
 

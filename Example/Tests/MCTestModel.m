@@ -15,6 +15,15 @@
     [MOKObject removeObserver:self];
 }
 
++ (instancetype)shared {
+    static MCTestModel *_instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super.alloc init];
+    });
+    return _instance;
+}
+
 - (void)targetCallback:(id)value {
     self.text = @"target test";
 }

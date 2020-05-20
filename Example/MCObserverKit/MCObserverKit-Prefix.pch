@@ -13,5 +13,4 @@
 #ifdef __OBJC__
     @import UIKit;
     @import Foundation;
-    @import MCObserverKit;
 #endif

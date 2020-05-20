@@ -49,6 +49,7 @@ typedef enum : NSUInteger {
  */
 - (void)registerObserver;
 
+#warning 移除观察者,单例对象必须调用
 /**
  移除观察者,单例对象必须调用
  */

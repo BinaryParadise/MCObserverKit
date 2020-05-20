@@ -10,4 +10,8 @@
 
 @implementation MCObserverViewModel
 
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
+}
+
 @end

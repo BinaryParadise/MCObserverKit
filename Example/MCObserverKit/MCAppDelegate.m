@@ -7,12 +7,14 @@
 //
 
 #import "MCAppDelegate.h"
+#import <MCObserverKit/MCObserverKit.h>
 
 @implementation MCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [MCObserverKit setDebugMode:YES];
     return YES;
 }
 
