@@ -19,6 +19,37 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'MCObserverKit'
 ```
+## 如何使用
+
+```objc
+@interface MCTestModel : NSObject
+
+@property (nonatomic, assign) int uuid;
+@property (nonatomic, assign) int uuid1;
+
+@property (nonatomic, copy, nullable) NSString *text;
+
+@end
+
+MCTestModel *m1 = [MCTestModel new];
+//uuid变化时回调block
+[MCObserver(m1, uuid) valueChanged:^(id target, id value) {
+    XCTAssert(m1.uuid == 15568);
+    [testExpectation fulfill];
+}];
+//text变化且符合条件时回调block
+[MCObserver(m1, text) valueChanged:^(id target, id value) {
+    XCTAssert(value);
+    [testExpectation fulfill];
+} condition:^BOOL(id target, id value) {
+    return [value length] > 2;
+}];
+//uuid变化时回调SEL
+[MCObserver(m1, uuid) addTarget:m1 action:@selector(targetCallback:)];
+
+//赋值，触发值变化回调
+m1.uuid = 15568;
+```
 
 ## License
 

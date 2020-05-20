@@ -18,17 +18,24 @@ DEPENDENCIES:
   - MCUIKit (~> 0.2.3)
   - MLeaksFinder (~> 1.0.0)
 
+SPEC REPOS:
+  trunk:
+    - FBRetainCycleDetector
+    - MCFoundation
+    - MCUIKit
+    - MLeaksFinder
+
 EXTERNAL SOURCES:
   MCObserverKit:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   MCFoundation: 1c05141cbc900ec15618d7d4c75fb88719d7b658
-  MCObserverKit: 0888865520a8f3afa781aecb9010ea8d9cf78428
+  MCObserverKit: e85df8596f0619a751dfc510e312f800b6ba1f70
   MCUIKit: 1386da2dce567a5f50f299878652821a099e386a
   MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
 
 PODFILE CHECKSUM: dfd6c2be3d93343cd7b78ab775d259985ce6db01
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.9.1

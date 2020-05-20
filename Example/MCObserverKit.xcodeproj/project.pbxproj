@@ -242,7 +242,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				3C7098A3C75690D77B5F2AC6 /* [CP] Embed Pods Frameworks */,
-				05B0895CD69EB40C46D98853 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,8 +260,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				691F74F511E190AF6D8BF304 /* [CP] Embed Pods Frameworks */,
-				98BBBAE2AFC46D0C7FA86213 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,21 +328,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		05B0895CD69EB40C46D98853 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2DF19775228A4C24F0355A1E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,7 +352,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
 				"${BUILT_PRODUCTS_DIR}/MCFoundation/MCFoundation.framework",
 				"${BUILT_PRODUCTS_DIR}/MCObserverKit/MCObserverKit.framework",
@@ -387,37 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		691F74F511E190AF6D8BF304 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MCObserverKit_Tests/Pods-MCObserverKit_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		98BBBAE2AFC46D0C7FA86213 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MCObserverKit_Tests/Pods-MCObserverKit_Tests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MCObserverKit_Example/Pods-MCObserverKit_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B46BF83D41426C7FA4BA400F /* [CP] Check Pods Manifest.lock */ = {
