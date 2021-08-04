@@ -26,6 +26,7 @@
 		B612643BAF8A03E9410F6991 /* libPods-MCObserverKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1638A5D1AA51A8B3210F8C45 /* libPods-MCObserverKit_Example.a */; };
 		C54B5A47201A108000EBD32D /* MCObserverViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C54B5A46201A108000EBD32D /* MCObserverViewModel.m */; };
 		C913E6472475194900337AAD /* MCSingletonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C913E6462475194900337AAD /* MCSingletonViewController.m */; };
+		C9E47ECD26B7D88800D7153D /* MCStandardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E47ECC26B7D88800D7153D /* MCStandardViewController.m */; };
 		F13406545720837322264A80 /* libPods-MCObserverKit_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 457C68BD8E58E03CC8274119 /* libPods-MCObserverKit_Tests.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,8 @@
 		C54B5A46201A108000EBD32D /* MCObserverViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCObserverViewModel.m; sourceTree = "<group>"; };
 		C913E6452475194900337AAD /* MCSingletonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCSingletonViewController.h; sourceTree = "<group>"; };
 		C913E6462475194900337AAD /* MCSingletonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCSingletonViewController.m; sourceTree = "<group>"; };
+		C9E47ECB26B7D88800D7153D /* MCStandardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCStandardViewController.h; sourceTree = "<group>"; };
+		C9E47ECC26B7D88800D7153D /* MCStandardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCStandardViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 				6003F5A6195388D20070C39A /* MCViewController.m */,
 				C913E6452475194900337AAD /* MCSingletonViewController.h */,
 				C913E6462475194900337AAD /* MCSingletonViewController.m */,
+				C9E47ECB26B7D88800D7153D /* MCStandardViewController.h */,
+				C9E47ECC26B7D88800D7153D /* MCStandardViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				6003F5A7195388D20070C39A /* MCViewController.m in Sources */,
 				C913E6472475194900337AAD /* MCSingletonViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				C9E47ECD26B7D88800D7153D /* MCStandardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

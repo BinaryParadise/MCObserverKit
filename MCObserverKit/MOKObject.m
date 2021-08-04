@@ -121,27 +121,20 @@ static void *robindingKeys = &robindingKeys;
 }
 
 - (void)dealloc {
-    @try {
-        self.observeToObject = nil;
-        if (self.isObserved) {
-            [self.target removeObserver:self forKeyPath:self.keyPath];
-            if ([MCObserverKit debugMode]) {
-                NSLog(@"remove [%@.%p.%@ > %p]", [self.target class], self.target, self.keyPath, self);
-            }
-        }
-    }
-    @catch (NSException *exception) {
-        if ([MCObserverKit debugMode]) {
-            NSLog(@"移除失败：%@",exception.reason);
-        }
-    }
-    @finally {
-        self.keyPath = nil;
-        self.target = nil;
+    self.observeToObject = nil;
+    if (self.isObserved) {
         self.block = nil;
         self.changedTarget = nil;
         self.changedAction = nil;
         self.isObserved = NO;
+        @try {
+            [self.target removeObserver:self forKeyPath:self.keyPath];
+        } @catch (NSException *exception) {
+            NSLog(@"%s+%d 移除失败：%@", __FUNCTION__, __LINE__, exception.reason);
+        }
+        if ([MCObserverKit debugMode]) {
+            NSLog(@"remove [%@.%p.%@ > %p]", [self.target class], self.target, self.keyPath, self);
+        }
     }
 }
 

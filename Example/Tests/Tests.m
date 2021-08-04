@@ -107,5 +107,11 @@
     XCTAssert([m1.text isEqualToString:@"xxxxxx"]);
 }
 
+- (void)testRemoved {
+    MCTestModel *m1 = [MCTestModel new];
+    MCObserverCC(m1, uuid).isObserved = true;
+    XCTAssert(m1);
+}
+
 @end
 

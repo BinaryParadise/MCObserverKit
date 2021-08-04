@@ -1,27 +1,21 @@
 PODS:
-  - FBRetainCycleDetector (0.1.4)
   - MCFoundation (0.2.2)
   - MCObserverKit (0.2.0):
     - MCFoundation (~> 0.2)
-  - MCUIKit (0.3.8):
-    - SDWebImage (~> 5.4)
-  - MLeaksFinder (1.0.0):
-    - FBRetainCycleDetector
-  - SDWebImage (5.8.0):
-    - SDWebImage/Core (= 5.8.0)
-  - SDWebImage/Core (5.8.0)
+  - MCUIKit (0.3.9):
+    - SDWebImage
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
 
 DEPENDENCIES:
   - MCObserverKit (from `../`)
   - MCUIKit (~> 0.3.0)
-  - MLeaksFinder (~> 1.0.0)
 
 SPEC REPOS:
   trunk:
-    - FBRetainCycleDetector
     - MCFoundation
     - MCUIKit
-    - MLeaksFinder
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -29,13 +23,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   MCFoundation: 1c05141cbc900ec15618d7d4c75fb88719d7b658
   MCObserverKit: e85df8596f0619a751dfc510e312f800b6ba1f70
-  MCUIKit: cc77732af1004c1ca071c8d9f318eba9fe0f19fd
-  MLeaksFinder: 8c435bd2f6d070af18cff082b503b21adc130fc0
-  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  MCUIKit: e57d8c67433660d55c2b1f6845abfaceec765cab
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
 
-PODFILE CHECKSUM: 88dbf38a245d001c3cf3a1a8f00299942c249ae3
+PODFILE CHECKSUM: f1d3127101eef56eabf0fecfbc6c069783ae59bb
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1
